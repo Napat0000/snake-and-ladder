@@ -46,6 +46,12 @@
         "tilemapTile": true,
         "displayName": "myTile3"
     },
+    "tile8": {
+        "data": "hwQQABAAAACZmZmZmZmZmRkRERERERGRGREREREREZEZERERERERkRkREZEZERGRGRERkRkREZEZERGRGRERkRkRmZmZmRGRGRGZmZmZEZEZERGRGRERkRkREZEZERGRGRERkRkREZEZERERERERkRkRERERERGRGREREREREZGZmZmZmZmZmQ==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true,
+        "displayName": "myTile6"
+    },
     "level2": {
         "id": "level2",
         "mimeType": "application/mkcd-tilemap",

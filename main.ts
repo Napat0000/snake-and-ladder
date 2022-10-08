@@ -148,6 +148,18 @@ function P1_working () {
         }
     }
 }
+scene.onOverlapTile(SpriteKind.Player2, assets.tile`myTile4`, function (sprite, location) {
+    if (Dice == 0) {
+        P2loc = 1
+        tiles.placeOnRandomTile(sprite, assets.tile`myTile2`)
+    }
+})
+scene.onOverlapTile(SpriteKind.Player1, assets.tile`myTile4`, function (sprite, location) {
+    if (Dice == 0) {
+        P1loc = 1
+        tiles.placeOnRandomTile(sprite, assets.tile`myTile2`)
+    }
+})
 controller.B.onEvent(ControllerButtonEvent.Released, function () {
     if (!(Diced)) {
         Dice = randint(1, 6)
@@ -175,9 +187,21 @@ function Gamesetup () {
         1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
         `, SpriteKind.Snake)
     Generator.setPosition(24, 8)
+    for (let index = 0; index < 7; index++) {
+        for (let index = 0; index < 8; index++) {
+            General = randint(0, 10)
+            if (General == 0) {
+                tiles.setTileAt(tiles.locationOfSprite(Generator), assets.tile`myTile4`)
+            }
+            Generator.x += 16
+        }
+        Generator.x = 24
+        Generator.y += 16
+    }
     Generator.destroy()
 }
 let P2level = 0
+let General = 0
 let Generator: Sprite = null
 let Diced = false
 let Trun = 0
